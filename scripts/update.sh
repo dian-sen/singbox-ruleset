@@ -106,6 +106,10 @@ for name in "${GEOIP_NAMES[@]}"; do
   download "${LOYAL_GEOIP}/${name}.srs" "geoip/${name}.srs" || true
 done
 
+python3 scripts/filter_ai.py || true
+if command -v sing-box >/dev/null; then
+  sing-box rule-set compile geosite/ai.json -o geosite/ai.srs 2>/dev/null || true
+fi
 echo "==> Summary"
 echo "geosite ($(ls geosite/*.srs 2>/dev/null | wc -l)):"
 ls -1 geosite/*.srs 2>/dev/null | sed 's|.*/||' | sort
