@@ -40,16 +40,23 @@
         "server": "dns_local"
       },
       {
-        "rule_set": ["geosite-ads"],
+        "rule_set": [
+          "geosite-ads"
+        ],
         "server": "dns_block",
         "disable_cache": true
       },
       {
-        "rule_set": ["geosite-cn", "geosite-private"],
+        "rule_set": [
+          "geosite-cn",
+          "geosite-private"
+        ],
         "server": "dns_direct"
       },
       {
-        "rule_set": ["geosite-geolocation-!cn"],
+        "rule_set": [
+          "geosite-geolocation-!cn"
+        ],
         "server": "dns_proxy"
       }
     ],
@@ -62,7 +69,10 @@
       "type": "tun",
       "tag": "tun-in",
       "interface_name": "tun0",
-      "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
@@ -95,13 +105,20 @@
     {
       "type": "selector",
       "tag": "proxy",
-      "outbounds": ["节点1", "节点2", "auto"],
+      "outbounds": [
+        "节点1",
+        "节点2",
+        "auto"
+      ],
       "default": "auto"
     },
     {
       "type": "urltest",
       "tag": "auto",
-      "outbounds": ["节点1", "节点2"],
+      "outbounds": [
+        "节点1",
+        "节点2"
+      ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m"
     }
@@ -212,6 +229,41 @@
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/telegram.srs",
         "download_detour": "proxy"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-anthropic",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geosite/anthropic.srs",
+        "download_detour": "proxy"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-deepseek",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geosite/deepseek.srs",
+        "download_detour": "proxy"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-xai",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geosite/xai.srs",
+        "download_detour": "proxy"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-perplexity",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geosite/perplexity.srs",
+        "download_detour": "proxy"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-tiktok",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geosite/tiktok.srs",
+        "download_detour": "proxy"
       }
     ],
     "rules": [
@@ -220,11 +272,16 @@
         "outbound": "dns-out"
       },
       {
-        "rule_set": ["geosite-ads"],
+        "rule_set": [
+          "geosite-ads"
+        ],
         "outbound": "block"
       },
       {
-        "rule_set": ["geosite-private", "geoip-private"],
+        "rule_set": [
+          "geosite-private",
+          "geoip-private"
+        ],
         "outbound": "direct"
       },
       {
@@ -236,20 +293,32 @@
           "geosite-telegram",
           "geosite-discord",
           "geosite-twitter",
-          "geosite-github"
+          "geosite-github",
+          "geosite-anthropic",
+          "geosite-deepseek",
+          "geosite-xai",
+          "geosite-perplexity",
+          "geosite-tiktok"
         ],
         "outbound": "proxy"
       },
       {
-        "rule_set": ["geoip-telegram"],
+        "rule_set": [
+          "geoip-telegram"
+        ],
         "outbound": "proxy"
       },
       {
-        "rule_set": ["geosite-cn", "geoip-cn"],
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
+        ],
         "outbound": "direct"
       },
       {
-        "rule_set": ["geosite-geolocation-!cn"],
+        "rule_set": [
+          "geosite-geolocation-!cn"
+        ],
         "outbound": "proxy"
       }
     ],
