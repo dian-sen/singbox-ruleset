@@ -46,7 +46,7 @@
 `apple@cn` · `microsoft@cn` · `steam@cn` · `category-games` · `category-entertainment` · `category-entertainment@!cn` · `category-media` · `media`
 
 ### GeoIP
-`private` · `cn` · `telegram` · `google` · `cloudflare` · `facebook` · `twitter` · `netflix`
+`private` · `geoip-cn` · `geoip-telegram` · `google` · `cloudflare` · `facebook` · `twitter` · `netflix`
 
 完整文件见仓库 [`geosite/`](./geosite) 与 [`geoip/`](./geoip) 目录。
 
@@ -103,7 +103,7 @@
         "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/cn.srs",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/geoip-cn.srs",
         "download_detour": "proxy"
       }
     ]

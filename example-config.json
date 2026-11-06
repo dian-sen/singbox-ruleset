@@ -213,21 +213,21 @@
         "type": "remote",
         "tag": "geoip-private",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/private.srs",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/geoip-private.srs",
         "download_detour": "proxy"
       },
       {
         "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/cn.srs",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/geoip-cn.srs",
         "download_detour": "proxy"
       },
       {
         "type": "remote",
         "tag": "geoip-telegram",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/telegram.srs",
+        "url": "https://cdn.jsdelivr.net/gh/dian-sen/singbox-ruleset@main/geoip/geoip-telegram.srs",
         "download_detour": "proxy"
       },
       {

@@ -98,12 +98,12 @@ if [[ -f geosite/grok.srs && ! -f geosite/xai.srs ]]; then
   cp geosite/grok.srs geosite/xai.srs || true
 fi
 
-echo "==> GeoIP (MetaCubeX -> SagerNet -> Loyalsoldier)"
+echo "==> GeoIP (MetaCubeX -> SagerNet -> Loyalsoldier) -> geoip-{name}.*"
 for name in "${GEOIP_NAMES[@]}"; do
-  download "${META_GEOIP}/${name}.srs" "geoip/${name}.srs" || true
-  download "${META_GEOIP}/${name}.json" "geoip/${name}.json" || true
-  download "${SAGER_GEOIP}/geoip-${name}.srs" "geoip/${name}.srs" || true
-  download "${LOYAL_GEOIP}/${name}.srs" "geoip/${name}.srs" || true
+  download "${META_GEOIP}/${name}.srs" "geoip/geoip-${name}.srs" || true
+  download "${META_GEOIP}/${name}.json" "geoip/geoip-${name}.json" || true
+  download "${SAGER_GEOIP}/geoip-${name}.srs" "geoip/geoip-${name}.srs" || true
+  download "${LOYAL_GEOIP}/${name}.srs" "geoip/geoip-${name}.srs" || true
 done
 
 python3 scripts/filter_ai.py || true
